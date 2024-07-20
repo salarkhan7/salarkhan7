@@ -1,0 +1,310 @@
+#include <stdio.h>
+#include <stdlib.h>
+int nazimabadcandidate;
+int nazimabadcandidate1=0;
+int nazimabadcandidate2=0;
+int nazimabadcandidate3=0;
+int defencecandidate;
+int defencecandidate1=0;
+int defencecandidate2=0;
+int defencecandidate3=0;
+int orangicandidate;
+int orangicandidate1=0;
+int orangicandidate2=0;
+int orangicandidate3=0;
+
+
+int area;
+char name[50];
+int cnic ;
+int age;
+char ch;
+int candidate;
+int area;
+char name[50];
+int cnic ;
+int age;
+
+
+void add(){
+        FILE*fptr;
+        fptr=fopen("ELECTION.txt","a");
+      printf("ENTER YOUR NAME : ");
+      scanf("%s",&name);
+       printf("ENTER YOUR CNIC : ");
+      scanf("%d",&cnic);
+      printf("ENTER AGE : ");
+      scanf("%d",&age);
+fprintf(fptr,"NAME\t\tCNIC\t\tAGE\n");
+fprintf(fptr,"%s\t\t%d\t\t%d\n",name,cnic,age);
+fclose(fptr);
+
+}
+void nazimabadcandidate_info()
+{
+
+
+    printf("nazimabad candidate 1 \n");
+    printf("SALAR KHAN\n");
+     printf("Master\n");
+      printf("ABC PARTY\n");
+      printf("\n");
+      printf("nazimabad candidate 2 \n");
+      printf("MUSTAFA HAIDER\n");
+      printf("BECHLORS\n");
+     printf("DEF PARTY\n");
+     printf("\n");
+     printf("nazimabad candidate 3 \n");
+      printf("USMAN KHAN\n");
+      printf( "Master\n");
+      printf("GHI PARTY\n");
+printf("\n");
+
+
+}
+
+void defencecandidate_info()
+{
+
+printf("\n");
+    printf("defence candidate 1 \n");
+    printf("SHARUKH KARIM\n");
+     printf("Master\n");
+      printf("ABC PARTY\n");
+      printf("\n");
+      printf("defence candidate 2 \n");
+      printf("HAMMAD \n");
+      printf("BECHLORS\n");
+     printf("DEF PARTY\n");
+     printf("defence candidate 3 \n");
+     printf("\n");
+      printf("NOORUL HAQ\n");
+      printf( "Master\n");
+      printf("GHI PARTY\n");
+
+printf("\n");
+
+}
+
+void orangicandidate_info()
+{
+printf("\n");
+    printf("orangi candidate 1 \n");
+    printf("ABDUL BASIT\n");
+     printf("Master\n");
+      printf("ABC PARTY\n");
+      printf("\n");
+      printf("orangi candidate 2 \n");
+      printf("ABDULLAH \n");
+      printf("BECHLORS\n");
+     printf("DEF PARTY\n");
+     printf("\n");
+     printf("orangi candidate 3 \n");
+      printf("FARAZ BALOCH\n");
+      printf( "Master\n");
+      printf("GHI PARTY\n");
+
+printf("\n");
+
+}
+
+
+void addarea(){
+
+FILE*fptr;
+
+do{
+      fptr=fopen("ELECTION.txt","a");
+      printf("ENTER YOUR AREA :\n");
+      printf("1 Nazimabad\n");
+      printf("2 defence\n");
+      printf("3 orangi\n");
+      scanf("%d",&area);
+      printf("\n");
+      add();
+        fprintf(fptr,"AREA = %d\n",area);
+      if (area==1 )
+      {
+            nazimabadcandidate_info();
+            calvotes_nazimabad();
+
+      }
+
+
+      if (area==2 )
+      {
+          defencecandidate_info();
+          calvotes_defence();
+      }
+
+
+      if (area==3 )
+      {
+          orangicandidate_info();
+          calvotes_orangi();
+      }
+
+
+      printf("\n");
+
+
+         printf("\n");
+printf("press  Y if you want to add user : ");
+          scanf("%s",&ch);
+
+fclose(fptr);
+}
+
+
+while(ch=='Y' || ch=='y');
+
+
+
+}
+
+void calvotes_nazimabad(){
+
+scanf("%d",&nazimabadcandidate);
+      if (nazimabadcandidate==1){
+        nazimabadcandidate1++;
+        printf("\n");
+printf("nazimabad candidate 1 win %d vote",nazimabadcandidate1);
+    }
+if (nazimabadcandidate==2){
+        nazimabadcandidate2++;
+        printf("\n");
+printf("nazimabad  candidate 2 win %d vote",nazimabadcandidate2++);
+    }
+if (nazimabadcandidate==3){
+        nazimabadcandidate3++;
+        printf("\n");
+printf("nazimabad candidate 3 win %d vote",nazimabadcandidate3++);
+    }
+
+printf("\n");
+}
+
+void calvotes_orangi(){
+
+scanf("%d",&orangicandidate);
+      if (orangicandidate ==1){
+       orangicandidate1++;
+       printf("\n");
+printf("orangi candidate 1 win %d vote",orangicandidate1);
+    }
+if (orangicandidate ==2){
+        orangicandidate2++;
+        printf("\n");
+printf("orangi candidate 2 win %d vote",orangicandidate2);
+    }
+if (orangicandidate ==3){
+        orangicandidate3++;
+        printf("\n");
+printf("orangi candidate 3 win %d vote",orangicandidate3);
+    }
+
+
+}
+
+void calvotes_defence(){
+
+scanf("%d",&defencecandidate);
+      if (defencecandidate ==1){
+        defencecandidate1++;
+        printf("\n");
+printf("defence candidate 1 win %d vote",defencecandidate1);
+    }
+if (defencecandidate ==2){
+        defencecandidate2++;
+        printf("\n");
+printf("defence candidate 2 win %d vote",defencecandidate2);
+    }
+if (defencecandidate ==3){
+        defencecandidate3++;
+        printf("\n");
+printf("defence candidate 3 win %d vote",defencecandidate3);
+    }
+
+
+}
+
+void result_nazimabad(){
+
+        if(nazimabadcandidate1>nazimabadcandidate2 && nazimabadcandidate1>nazimabadcandidate3){
+            printf("\n ABC PARTY WON");
+        }
+
+        printf("\n");
+        if(nazimabadcandidate2>nazimabadcandidate1 && nazimabadcandidate2>nazimabadcandidate3){
+            printf("\n DEF PARTY WON");
+        }
+
+        printf("\n");
+        if(nazimabadcandidate3>nazimabadcandidate1 && nazimabadcandidate3>nazimabadcandidate2){
+            printf("\n GHI PARTY WON");
+        }
+
+
+}
+
+void result_defence(){
+
+         if(defencecandidate1>defencecandidate2 && defencecandidate1>defencecandidate3) {
+            printf("\n ABC PARTY WON");
+        }
+
+        printf("\n");
+        if(  defencecandidate2>defencecandidate1 && defencecandidate2>defencecandidate3){
+            printf("\n DEF PARTY WON");
+        }
+
+        printf("\n");
+        if(defencecandidate3>defencecandidate1 && defencecandidate3>defencecandidate2){
+            printf("\n GHI PARTY WON");
+        }
+
+}
+
+void result_orangi(){
+     if(orangicandidate1>orangicandidate2 && orangicandidate1>orangicandidate3){
+            printf("\n ABC PARTY WON");
+        }
+
+        printf("\n");
+        if(orangicandidate2>orangicandidate1 && orangicandidate2>orangicandidate3 ){
+            printf("\n DEF PARTY WON");
+        }
+
+        printf("\n");
+        if(orangicandidate3>orangicandidate1 && orangicandidate3>orangicandidate2 ){
+            printf("\n GHI PARTY WON");
+        }
+}
+void main(void)
+{
+    int op;
+
+    printf("press 1 to vote : ");
+    printf("\n");
+    printf("press 2 to exit : ");
+    printf("\n");
+    scanf("\n%d",&op);
+    switch(op){
+    case 1 :
+            addarea();
+            printf("DHA RESULT");
+            result_defence();
+            printf("NAZIMABD RESULT");
+            result_nazimabad();
+            printf("ORANGI RESULT");
+            result_orangi();
+    break;
+    case 2 :
+            printf("exit");
+    break;
+    default:
+        printf("enter invalid number");
+    }
+
+
+    }
